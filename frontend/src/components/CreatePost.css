@@ -1,0 +1,349 @@
+.create-post-modal-container {
+  padding: 0;
+  background: var(--card-background);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+}
+
+.create-post-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.create-post-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.create-post-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0;
+  color: white;
+}
+
+.create-post-form-modal {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.create-content-field {
+  position: relative;
+}
+
+.create-textarea {
+  width: 100%;
+  min-height: 140px;
+  max-height: 300px;
+  padding: 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-family: inherit;
+  line-height: 1.6;
+  background: var(--background-color);
+  color: var(--text-color);
+  resize: vertical;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.create-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.1);
+  transform: scale(1.01);
+}
+
+.create-textarea::placeholder {
+  color: var(--text-secondary-color);
+  opacity: 0.7;
+}
+
+.create-char-count {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary-color);
+  font-weight: 500;
+  background: var(--card-background);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-char-count .warning {
+  color: #f59e0b;
+}
+.create-image-preview-section {
+  margin-top: 1rem;
+}
+
+.create-image-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  background: var(--background-color);
+}
+
+.create-preview-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.create-image-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 1; }
+
+.create-remove-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.create-remove-btn:hover {
+  background: #ef4444;
+  color: white;
+  transform: scale(1.05);
+}
+
+.create-remove-btn:active {
+  transform: scale(0.98);
+}
+
+.create-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.create-media-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.create-image-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.create-image-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 155, 240, 0.2);
+}
+
+.create-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.create-file-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.create-filename {
+  font-size: 0.875rem;
+  color: var(--text-color);
+  font-weight: 500;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.create-filesize {
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+}
+
+.create-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 140px;
+  box-shadow: 0 4px 16px rgba(29, 155, 240, 0.3);
+}
+
+.create-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(29, 155, 240, 0.4);
+}
+
+.create-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.create-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.create-submit-btn.loading span {
+  opacity: 0.7;
+}
+
+.create-submit-btn.success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  animation: create-success-pulse 0.6s ease;
+}
+
+@keyframes create-success-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.create-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: create-spin 1s linear infinite;
+}
+
+@keyframes create-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .create-post-header {
+    padding: 1.5rem;
+  }
+
+  .create-post-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .create-post-form-modal {
+    padding: 1.5rem;
+  }
+
+  .create-textarea {
+    min-height: 120px;
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .create-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .create-media-section {
+    justify-content: center;
+  }
+
+  .create-submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .create-image-overlay {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .create-remove-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .create-post-header {
+    padding: 1.25rem;
+  }
+
+  .create-post-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .create-post-form-modal {
+    padding: 1.25rem;
+  }
+
+  .create-preview-img {
+    max-height: 300px;
+  }
+
+  .create-image-overlay {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .create-remove-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+body[data-theme='dark'] .create-remove-btn {
+  background: rgba(0, 0, 0, 0.9);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+body[data-theme='dark'] .create-remove-btn:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
