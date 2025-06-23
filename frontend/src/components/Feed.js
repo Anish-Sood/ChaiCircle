@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Post from './Post';
 import SkeletonPost from './SkeletonPost';
+import { apiRequest } from '../config/api';
+
 
 const Feed = () => {
     const [posts, setPosts] = useState([]);
@@ -9,7 +11,7 @@ const Feed = () => {
     const fetchPosts = async () => {
         setLoading(true);
         try {
-            const response = await fetch('/api/posts');
+            const response = await apiRequest('/api/posts');
             const data = await response.json();
             setPosts(data);
         } catch (error) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { apiRequest } from '../config/api';
 import UserPosts from './UserPosts';
 import './Profile.css';
 
@@ -20,7 +21,7 @@ const Profile = () => {
     const fetchUserProfile = async () => {
         try {
             setLoading(true);
-            const response = await fetch('/api/users/profile', {
+            const response = await apiRequest('/api/users/profile', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             
@@ -133,7 +134,7 @@ const Profile = () => {
             }
 
 
-            const response = await fetch('/api/users/profile', {
+            const response = await apiRequest('/api/users/profile', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

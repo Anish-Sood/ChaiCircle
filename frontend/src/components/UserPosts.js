@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import Post from './Post';
 import SkeletonPost from './SkeletonPost';
 import './UserPosts.css';
+import { apiRequest } from '../config/api';
 
 const UserPosts = () => {
     const [posts, setPosts] = useState([]);
@@ -13,7 +14,7 @@ const UserPosts = () => {
     const fetchUserPosts = async () => {
         setLoading(true);
         try {
-            const response = await fetch('/api/posts/my-posts', {
+            const response = await apiRequest('/api/posts/my-posts', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

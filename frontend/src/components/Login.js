@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { apiRequest } from '../config/api';
+
 import './Auth.css';
 
 const Login = () => {
@@ -17,7 +19,7 @@ const Login = () => {
         setIsLoading(true);
         
         try {
-            const response = await fetch('/api/auth/login', {
+            const response = await apiRequest('/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })

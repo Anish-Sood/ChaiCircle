@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { apiRequest } from '../config/api';
 import './CreatePost.css';
 
 const CreatePost = ({ onPostCreated }) => {
@@ -82,7 +83,7 @@ const CreatePost = ({ onPostCreated }) => {
                 }
             }
 
-            const response = await fetch('/api/posts', {
+            const response = await apiRequest('/api/posts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

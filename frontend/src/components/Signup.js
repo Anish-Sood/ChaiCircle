@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import './Auth.css';
+import { apiRequest } from '../config/api';
+
 
 const Signup = () => {
     const [name, setName] = useState('');
@@ -32,7 +34,7 @@ const Signup = () => {
         setIsLoading(true);
         
         try {
-            const response = await fetch('/api/auth/signup', {
+            const response = await apiRequest('/api/auth/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: name.trim(), email, password })

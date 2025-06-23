@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { FiHeart, FiMoreHorizontal, FiTrash2 } from 'react-icons/fi';
 import { AuthContext } from '../context/AuthContext';
 import './Post.css';
+import { apiRequest } from '../config/api';
+
 
 const formatTimestamp = (timestamp) => {
     const now = new Date();
@@ -79,7 +81,7 @@ const Post = ({ post, onPostDeleted }) => {
         setIsLoading(true);
         
         try {
-            const response = await fetch(`/api/posts/${post._id}/like`, {
+            const response = await apiRequest(`/api/posts/${post._id}/like`, {
                 method: 'POST',
             });
             const data = await response.json();
@@ -104,7 +106,7 @@ const Post = ({ post, onPostDeleted }) => {
         setIsDeleting(true);
         
         try {
-            const response = await fetch(`/api/posts/${post._id}`, {
+            const response = await apiRequest(`/api/posts/${post._id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`
